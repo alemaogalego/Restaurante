@@ -1,0 +1,104 @@
+Em restaurante.py 
+Criamos uma classe Restaurante. 
+Criamos uma lista global para classe restaurantes = []
+Definimos um construtor com nome e categoria.
+Adicionamos as instancia criada para a lista.
+Definimos uma função str. para devolver o valor impresso
+Utilizamos o classmethod para indicar um metodo da classe.
+Definimos uma funcao de classmethod para listar os restaurante. Usando o como parametro padrao python.(CLS)
+Usamos um     for in cls.restaurantes.        para percorrer a lista. 
+Pegamos as informaçoes como Nome, Categoria, {restaurante.ativo}, e usamos o ativo da função criada \/ 
+Usamos uma @property para definir o status do restaurante com emoji na hr de visulizar. 
+            def ativo(self):                                             esse ativo que colocamos o listar_restaurante para visualização. 
+                return '🟢' if self._ativo else '🔴'
+Fizemos uma função para alterar o status do restaurante = True p False ou vice-versa.
+No app.py >>   |       restaurante_japa.alternar_estado() 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Atividades 1  -- Á --  Atividades 6 
+Exploramos como criar atributos em classes e utilizando underscore (underline) para indicar que um atributo é protegido.
+
+Praticamos o uso da função property em outros atributos, como categoria e ativo, proporcionando uma abordagem mais controlada e facilitando o acesso aos valores desses atributos.
+
+Criamos e utilizamos métodos de classe, que são métodos que agem sobre a classe como um todo, em vez de uma instância específica.
+
+No exemplo, criamos o método listar_restaurante para exibir uma lista formatada dos restaurantes.
+
+Demonstramos o conceito de abstração ao utilizar a propriedade ativo para apresentar visualmente o estado ativo ou inativo de um restaurante.
+
+Atividade 6 - criamos uma função com metodo contrutor para atribuir na classe.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+app.py ('APLICACAO PRINCIPAL') \/ 
+Importamos a classe restaurante com                            |              from modelos.restaurante import Restaurante.
+Depois definimos uma função Main para listar os restaurante.   |              def main():
+                                                                                    Restaurante.listar_restaurante()
+
+Depois fazemos a aplicação principal > app.py < fizemos ele virar o Main =    if __main__ == ' __main__ '
+                                                                                    main()
+----------------------------------
+( CRIANDO CLASSE AVALIAÇÃO \/ )
+
+Criamos tambem uma Classe chamada Avaliação para o Nome do cliente e a Nota que ele vai dar para o restaurante.
+Em restaurante.py
+Criamos uma lista d avaliacao no construtor   __init__           |               self._avaliacao = []
+
+Importamos o avaliacao.py no restaurante.py                      |               from modelos.avaliacao import Avaliação
+
+Em seguida Criamos uma função no restaurante.py                  |               def receber_avaliacao(self, cliente, nota)
+Na função criamos avaliacao recebendo a classe Avaliacao         |                   avaliacao = Avaliacao(cliente, nota)
+adicionamos na lista de avaliacao   a avaliacao                  |                   self._avaliacao.append(avaliacao)
+
+para adicionar a avaliacao iremos abrir o app.py                                                     cliente | nota 
+e chamaremos a funcao criada para receber_avaliacao.  |           restaurante_big.receber_avaliacao('Lucas', '10')
+
+agora fazemos a media das avaliacoes no ('restaurante.py'). ATENÇÃO :
+usamos o     @property para ler as informaçoes/ deixar disponivel.                    |                 @property
+criamos uma função que recebe self como parametro.                                    |                 def media_avaliacao (self):
+Se nao tiver nota na avaliação retornar 0                                                                   if not self._avaliacao:
+                                                                                                                return 0                                                                                                                
+criamos uma variavel soma q recebe soma com sum e dps usamos um for avaliação na lista self._avaliacao      soma_das_nota = sum(avaliacao._nota for avaliacao in self._avaliacao)
+pegando apenas o avaliacao._nota e somando. 
+criamos uma variavel  qtd_d_nota  e usamos o len para ver o tamanho da lista                                qtd_d_nota = len(self._avaliacao)
+criamos uma variavel  media  e usamos o round para pegar apenas 1 casa decimal.                             media = round(soma_das_nota / qtd_d_nota ,1)
+retornamos a media.                                                                                         return media
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+agora adicionamos a media na nossa funcao de listar restaurantes em restaurante.py. 
+*adicionamos no print de listar_restaurante                                                                      |                {'Avaliação'.ljust(25)} 
+*adicionamos no print do for de listar_restaurante a media. e transformamos em string para usar ljust.           |                {str(restaurante.media_avaliacoes).ljust(25)}
+
+No app.py ('Aplicação Principal')
+damos a nota dos restaurante. 
+                                                restaurante_big.receber_avaliacao('Lucas', 10)
+                                                restaurante_big.receber_avaliacao('pedro', 5)
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Criamos uma lista =  self._cardapio = []
+e criamos uma função para adicionar na lista cardapio ('PRATO', 'BEBIDAS')
+
+Primeiro importamos o item_cardapio para pegar a classe
+Segundo fazemos a função:
+    def add_cardapio (self, item):
+        if isinstance(item, ItemCardapio):              | isinstance = Ela só vai ser verdadeira se o item for uma instancia ou um derivado da Classe.
+            self._cardapio.append(item)
+
+----------------------------------------
+Criamos uma função para listar os cardapio.
+    @property
+    def listar_cardapio(self):
+        print(f'Cardápio do restaurante {self._nome}\n')
+        for i, item in enumerate(self._cardapio, start=1):                         | >> i de index. para vir numerado.
+            if hasattr(item, 'descricao'):                                                       >>  para verificar se o atributo descricao existe.
+                mensagem_prato = f'{i}. Nome: {item._nome} | Preço: R${item._preco} | Descrição: {item.descricao}'
+                print(mensagem_prato)
+            else:
+                mensagem_bebida = f'{i}. Nome: {item._nome} | Preço: R${item._preco} | Tamanho: {item.tamanho}'
+                print(mensagem_bebida)
+
+------------------------------------------- treinar. 
+Crie uma classe chamada Sobremesa que herda de ItemCardapio, adicione atributos específicos como tipo, tamanho e descricao à classe Sobremesa. 
+Ajuste a inicialização da classe para incluir esses novos atributos, possibilitando a criação de um novo item ao cardápio do restaurante.
+Atualize o método __str__ conforme necessário para refletir essas mudanças.
+Certifique-se de que a classe Sobremesa mantenha a herança do método aplicar_desconto de ItemCardapio.
+
+----Feito. 
+

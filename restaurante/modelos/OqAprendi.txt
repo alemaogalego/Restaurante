@@ -1,0 +1,9 @@
+Neste curso, você explorou os fundamentos cruciais da Programação Orientada a Objetos (OO), uma abordagem poderosa para organizar e estruturar códigos. Você mergulhou no conceito de classes, compreendendo sua importância fundamental no desenvolvimento de software. 
+Construímos juntos a nossa primeira classe, o Restaurante, definindo atributos de instância, como nome, categoria e o estado ativo, que inicia como False.
+Ao longo do caminho, você aprendeu a utilizar métodos especiais da linguagem Python, como o construtor init, e praticou a abstração na escrita de atributos de maneira pythonica. 
+Aprofundamos nosso conhecimento ao explorar a criação de métodos de classe, destacando sua utilidade em operações que envolvem a classe como um todo.
+Além disso, demos um passo além na aplicação dos conceitos aprendidos, importando a classe Restaurante no arquivo principal (main.py). 
+Reforçamos nosso entendimento de OO ao criar mais uma classe e, de maneira avançada, integramos a classe Avaliação ao Restaurante. 
+Agora, podemos gerenciar uma lista de objetos de avaliação associados a cada restaurante e listar essas avaliações conforme necessário.
+Nossa… Quanta coisa legal!
+"Eu não sou o melhor não, mas sou capaz de fazer coisas que muitas pessoas não acreditam." Guga (tenista brasileiro)

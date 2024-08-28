@@ -1,0 +1,12 @@
+1. @property
+Propósito: O decorador @property é usado para definir um método que pode ser acessado como se fosse um atributo (ou propriedade) de instância.
+Ele permite que você crie métodos que podem ser acessados sem parênteses, como se fossem variáveis, oferecendo uma maneira de definir comportamentos controlados para a leitura de atributos.
+Uso Típico: Quando você deseja que um método seja acessado como se fosse um atributo e não quer que o usuário da classe precise saber que está chamando um método.
+Resumo : @property: Transforma um método de instância em um atributo que pode ser acessado diretamente, sem parênteses.
+
+@classmethod
+Propósito: O decorador @classmethod é usado para definir um método de classe. 
+Um método de classe recebe a própria classe como o primeiro argumento, geralmente chamado de cls, em vez da instância (como em métodos de instância, onde o primeiro argumento é self). 
+Isso permite que o método acesse e modifique variáveis de classe e seja chamado tanto pela classe quanto por suas instâncias.
+Uso Típico: Quando você precisa de um método que funcione a nível de classe, talvez para criar uma instância da classe de uma maneira diferente ou para modificar algum estado compartilhado entre todas as instâncias.
+Resumo: @classmethod: Transforma um método em um método de classe, que recebe a classe como primeiro argumento e pode ser chamado tanto pela classe quanto por suas instâncias.

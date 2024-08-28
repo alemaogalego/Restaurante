@@ -1,0 +1,9 @@
+Nesta aula:
+Criamos um método para adicionar itens ao cardápio e refatoramos a função para receber qualquer objeto que seja uma instância de ItemCardapio;
+
+Utilizamos o conceito de property para exibir o cardápio de cada restaurante, proporcionando uma visão clara dos itens disponíveis;
+
+Desenvolvemos o método abstrato chamado aplicar_desconto que permite aplicar descontos de forma flexível a diferentes tipos de itens no cardápio;
+
+Aplicamos um valor de desconto tanto em bebidas quanto em pratos, destacando o polimorfismo na prática, onde diferentes classes respondem ao mesmo método de maneiras distintas.
+
