@@ -111,6 +111,13 @@ def listar_cardapio(self):
    ```bash
    python app.py
    ```
+## Informaçoes Adicionais
+Ler os arquivos: 
+- OqAprendi.txt
+- info.txt
+- note.txt
+- cardapio/ OqAprendemos2.txt
+- cardapio/ info.txt
 
 ## Melhorias Futuras
 - Implementação de um sistema de pedidos
